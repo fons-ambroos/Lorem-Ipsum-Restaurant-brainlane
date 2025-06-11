@@ -1,0 +1,40 @@
+@use '../tools/mixins' as mixins;
+$icon-size: 16px;
+
+.header {
+    color: var(--primary-main);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background: var(--header-background);
+
+    &__title {
+        color: var(--primary-main);
+    }
+
+    &__logo {
+        @include mixins.padding(12);
+    }
+
+    &__menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        span {
+            @include mixins.margin(12, right);
+        }
+
+        .header__hamburger {
+            border-radius: 999px;
+            background: var(--icon-background);
+            padding: 12px;
+
+            svg {
+                width: $icon-size;
+                height: $icon-size;
+            }
+        }
+    }
+}

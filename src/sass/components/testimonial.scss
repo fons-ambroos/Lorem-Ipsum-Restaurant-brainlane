@@ -1,0 +1,50 @@
+@use '../settings/typography' as *;
+@use '../tools/mixins' as mixins;
+
+.testimonial {
+    @include mixins.margin(60, top);
+    @include mixins.margin(60, bottom);
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    &__wrapper {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+        @include mixins.breakpoint-up(md) {
+            max-width: 50%;
+            padding: none;
+        }
+    }
+
+
+
+    &__title {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    &__underline {
+        border: none;
+        height: 1px;
+        background-color: var(--underline);
+        margin: 20px 30px;
+        padding: 0 20px;
+    }
+
+    &__text {
+        font-style: italic;
+        font-size: 16px;
+        color: var(--primary-accent);
+        margin-bottom: 10px;
+            @include mixins.margin(20, bottom);
+    }
+}

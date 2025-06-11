@@ -1,0 +1,66 @@
+@use '../settings/typography' as *;
+@use '../tools/mixins' as mixins;
+
+
+.menu-hero {
+    height: 400px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: flex-end;
+    background-image: url('../assets/images/menu.png');
+    background-repeat: no-repeat;
+    background-size: 110%;
+    background-position: 50% 50%;
+
+    &__content {
+        width: 80%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+
+        @include mixins.padding(50, bottom);
+    }
+
+    &__title {
+
+        color: var(--text-white);
+        font-size: 35px;
+
+        .wrap-word {
+            word-wrap: break-word;
+            display: inline-block;
+            max-width: 100%;
+        }
+
+    }
+
+    &__button-group {
+
+        display: flex;
+        flex-direction: column;
+
+
+        @include mixins.breakpoint-up(md) {
+            flex-direction: row;
+        }
+
+        .button.button--secondary {
+            color: var(--text-white);
+            border: solid var(--text-white);
+
+
+        }
+
+        .button {
+
+            @include mixins.margin(24, bottom);
+
+            @include mixins.breakpoint-up(md) {
+                @include mixins.margin(24, right);
+            }
+        }
+    }
+}

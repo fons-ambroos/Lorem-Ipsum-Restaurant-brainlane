@@ -1,0 +1,105 @@
+@use '../settings/typography' as *;
+@use '../tools/mixins' as mixins;
+
+.about {
+    @include mixins.margin(60, top);
+    @include mixins.margin(60, bottom);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__wrapper {
+        max-width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__title {
+        font-size: 2em;
+        @include mixins.margin(20, bottom);
+        position: relative;
+
+        text-align: center;
+
+    }
+
+    &__underline {
+        border: none;
+        height: 1px;
+        background-color: var(--underline);
+        margin: 20px 30px;
+        padding: 0 20px;
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+
+        @include mixins.margin(100, bottom);
+        background-color: var(--text-white);
+
+
+
+        @include mixins.breakpoint-up(lg) {
+            flex-direction: row;
+        }
+
+        .card__image {
+
+            position: relative;
+
+            img {
+
+                object-fit: cover;
+                border-radius: 8px;
+
+                @include mixins.breakpoint-up(md) {
+                    width: 500px;
+                    height: 200px;
+                    box-shadow: 12px 24px 44px 0px #07070751;
+                    border-radius: 0;
+                }
+            }
+
+            .card__text {
+                position: absolute;
+                left: -25px;
+                bottom: -25px;
+                color: var(--text-white);
+
+                background: var(--background-beige);
+                @include mixins.padding(20);
+                opacity: 0.85;
+            }
+        }
+
+        .card__content {
+            @include mixins.padding(20);
+            flex: 1;
+        }
+
+        &:nth-child(3) {
+            .card__text {
+                background: var(--background-primary);
+            }
+
+        }
+
+        &:nth-child(2) {
+
+            .card__image {
+
+
+                @include mixins.breakpoint-up(md) {
+                    @include mixins.margin(20, right);
+                }
+            }
+
+        }
+    }
+
+
+}

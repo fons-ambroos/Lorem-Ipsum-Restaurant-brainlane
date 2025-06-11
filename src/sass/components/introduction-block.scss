@@ -1,0 +1,57 @@
+@use '../settings/typography' as *;
+@use '../tools/mixins' as mixins;
+
+.introduction-block {
+    position: relative;
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../assets/images/diner.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include mixins.breakpoint-up(md) {
+        min-height: 650px;
+         background-size: 120%;
+    background-position: 5% 75%;
+    }
+
+    &__content {
+
+        display: flex;
+        flex-direction: column;
+
+        max-width: 400px;
+        color: var(--primary-accent);
+        position: relative;
+        text-align: center;
+        left: auto;
+
+
+        @include mixins.breakpoint-up(md) {
+            position: absolute;
+            left: 20%;
+        }
+    }
+
+    &__title {
+
+        color: var(--primary-main);
+        @include typography(introduction-block);
+
+
+    }
+
+    .button-group {
+        .button:first-child {
+
+            @include mixins.margin(18, right);
+        }
+    }
+
+
+
+
+}

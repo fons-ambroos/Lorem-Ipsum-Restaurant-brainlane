@@ -1,0 +1,112 @@
+@use '../settings/typography' as *;
+@use '../tools/mixins' as mixins;
+
+.footer {
+    @include mixins.margin(60, top);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__wrapper {
+        max-width: 80%;
+        @include mixins.margin(60, bottom);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+
+        @include mixins.breakpoint-up(md) {
+            flex-direction: row;
+        }
+    }
+
+    &__logo {
+        height: 50px;
+        @include mixins.margin(40, bottom);
+    }
+
+    h6 {
+        color: var(--primary-main);
+        font-weight: bold;
+        @include mixins.padding(20, bottom);
+    }
+
+    &__adress {
+        color: var(--primary-main);
+        font-weight: bold;
+
+        a {
+
+            color: var(--primary-main);
+        }
+
+        svg {
+            display: inline-block;
+            @include mixins.padding(4, right);
+        }
+    }
+
+    &__menu {
+        ul {
+            list-style-type: none;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-accent);
+        }
+
+        li {
+            @include mixins.padding(8, bottom);
+        }
+
+    }
+
+
+    &__adress,
+    &__menu,
+    &__openingshours,
+    &__newsletter {
+        color: var(--primary-accent);
+        flex: 1;
+        @include mixins.padding(16, bottom);
+
+
+         @include mixins.breakpoint-up(md) {
+            @include mixins.padding(40, right);
+         }
+    }
+
+
+    &__links {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        width: 100%;
+        @include mixins.padding(20, top);
+        color: var(--primary-accent);
+        border-top: 1px solid var(--footer-underline);
+
+        a {
+            margin-right: 10px;
+        }
+    }
+
+    &__link {
+        a {
+            color: var(--text-beige);
+        }
+    }
+
+    &__map {
+        width: 100%;
+    }
+}

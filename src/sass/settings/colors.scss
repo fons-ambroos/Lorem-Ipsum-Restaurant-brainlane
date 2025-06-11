@@ -1,0 +1,29 @@
+@use './themes/theme' as light;
+@use './themes/theme-dm' as dark;
+
+// This mixin converts a map to CSS variables
+@mixin theme-vars($theme-map) {
+    @each $key, $value in $theme-map {
+
+        #{'--' + $key}: #{$value};
+      }
+}
+
+:root {
+    @include theme-vars(light.$theme);
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        @include theme-vars(light.$theme);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        @include theme-vars(dark.$theme-dm);
+    }
+}
+body {
+    background-color: var(--background-default);
+}

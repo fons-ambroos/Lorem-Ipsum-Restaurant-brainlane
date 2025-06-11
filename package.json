@@ -1,0 +1,30 @@
+{
+  "name": "Lorem Ipsum Restaurant brainlane",
+  "version": "1.0.0",
+  "description": "responsive website",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "gulp"
+  },
+  "devDependencies": {
+    "breakpoint-sass": "^3.0.0",
+    "browser-sync": "^2.29.3",
+    "gulp": "^5.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-imagemin": "^9.1.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "imagemin-jpegtran": "^8.0.0",
+    "sass": "^1.89.2"
+  },
+  "dependencies": {
+    "glob": "^11.0.2",
+    "rimraf": "^6.0.1",
+    "seed-breakpoints": "^0.4.1"
+  }
+}

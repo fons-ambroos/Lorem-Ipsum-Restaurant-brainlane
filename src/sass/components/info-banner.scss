@@ -1,0 +1,17 @@
+@use '../tools/mixins' as mixins;
+@use '../settings/typography' as *;
+
+.info-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    background-color: var(--background-default);
+    @include mixins.padding(24);
+    @include typography(normal);
+
+    @include mixins.breakpoint(md) {
+        flex-direction: row;
+    }
+}

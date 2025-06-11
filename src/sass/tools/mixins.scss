@@ -1,0 +1,87 @@
+@use 'sass:map';
+@use '../settings/spacing' as *;
+@use '../settings/breakpoints.scss' as *;
+
+
+@mixin margin($key, $direction: null) {
+
+    @if $direction ==null {
+        margin: map.get($spacing, $key);
+    }
+
+    @else if $direction ==top {
+        margin-top: map.get($spacing, $key);
+    }
+
+    @else if $direction ==right {
+        margin-right: map.get($spacing, $key);
+    }
+
+    @else if $direction ==bottom {
+        margin-bottom: map.get($spacing, $key);
+    }
+
+    @else if $direction ==left {
+        margin-left: map.get($spacing, $key);
+    }
+
+    @else {
+        margin: map.get($spacing, $key);
+    }
+}
+
+
+
+@mixin padding($key, $direction: null, ) {
+    @if $direction ==null {
+        padding: map.get($spacing, $key);
+    }
+
+    @else if $direction ==top {
+        padding-top: map.get($spacing, $key);
+    }
+
+    @else if $direction ==right {
+        padding-right: map.get($spacing, $key);
+    }
+
+    @else if $direction ==bottom {
+        padding-bottom: map.get($spacing, $key);
+    }
+
+    @else if $direction ==left {
+        padding-left: map.get($spacing, $key);
+    }
+}
+
+@mixin breakpoint($breakpoint) {
+  $breakpoint-val: map.get($breakpoints, $breakpoint);
+
+ 
+  @if $breakpoint == sm {
+    @media (max-width: #{map.get($breakpoints, md) - 1px}) {
+      @content;
+    }
+  }
+  @else if $breakpoint == md {
+    @media (min-width: #{$breakpoint-val}) and (max-width: #{map.get($breakpoints, lg) - 1px}) {
+      @content;
+    }
+  }
+  @else if $breakpoint == lg {
+    @media (min-width: #{$breakpoint-val}) {
+      @content;
+    }
+  }
+}
+
+@mixin breakpoint-up($breakpoint) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    $min: map.get($breakpoints, $breakpoint);
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint: #{$breakpoint}";
+  }
+}

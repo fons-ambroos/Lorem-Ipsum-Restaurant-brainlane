@@ -1,0 +1,28 @@
+@mixin typography($style) {
+    @if $style == 'extra-small' {
+        font-size: 10px;
+        line-height: 1;
+        font-weight: 400;
+    } @else if $style == 'small' {
+        font-size: 12px;
+        line-height: 1.2;
+        font-weight: 400;
+    } @else if $style == 'normal' {
+        font-size: 14px;
+        line-height: 1.4;
+        font-weight: normal;
+    } @else if $style == 'large' {
+        font-size: 16px;
+        line-height: 1.6;
+        font-weight: bold;
+    }@else if $style == 'extra-large' {
+        font-size: 18px;
+        line-height: 1.8;
+        font-weight: bold;
+    }
+    @else if $style == 'introduction-block' {
+        font-size: 40px;
+        line-height: 1.4;
+        font-weight: 400;
+    }
+}

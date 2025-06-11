@@ -1,0 +1,25 @@
+@use '../tools/mixins' as mixins;
+$icon-size-social: 16px;
+.social__icons {
+     display: flex;
+
+        .social__icon {
+
+            border-radius: 999px;
+            background: var(--icon-background);
+            padding: 12px;
+            @include mixins.margin(right, 8);
+
+            &:not(:last-of-type) {
+                @include mixins.margin(12, right);
+            }
+
+            svg {
+                width: $icon-size-social;
+                height: $icon-size-social;
+                max-width: none;
+
+
+            }
+        }
+}
